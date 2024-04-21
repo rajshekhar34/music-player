@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="music-player">
+        <div class="container">
+            <div class="camera">
+            </div>
+            <div class="thumbnail">
+               <img class="song-img" src="" alt="">
+            </div>
+            <div class="song-details">
+                <p class="title">Ve kamleya</p>
+                <p class="artist">Arijit Singh</p>
+                    <audio id="music"></audio>
+            </div>
+            <div class="button-container">
+                <div id="duration">
+                    <p class="start-time"></p>
+                    <p class="total-time"></p>
+                </div>
+                <input type="range" name="" class="custom-range" id="progress">
+                <div class="playpause">
+                    <div id="prev" class="buttons"><i class="fa-solid fa-backward"></i></div>
+                    <div id="play-pause" class="buttons"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                    <div id="next" class="buttons"><i class="fa-solid fa-forward"></i></div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                    <img class="navigation home" src="triangle.png" alt="">
+                    <div class="square home navigation"></div>
+                    <div class="lines navigation">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="homepage hide">
+            <img src="wallpaper.jpg" alt="">
+            <div class="camera-homepage">
+            </div>
+            <div class="time">
+                <h1 id="time"></h1>
+                <p id="date"></p>
+            </div>
+            <div class="background-play hide">
+                <div class="crossmark"><i class="fa-solid fa-xmark"></i></div>
+                <div class="button-container-back">
+                    <div id="duration-back">
+                        <p class="start-time-back"></p>
+                        <marquee id="song-details-back" behavior="" direction="" scrolldelay="200"></marquee>
+                        <p class="total-time-back"></p>
+                    </div>
+                    <input type="range" name="" class="custom-range" id="progress-back">
+                    <div class="playpause-back">
+                        <div id="prev-back" class="buttons-back"><i class="fa-solid fa-backward"></i></div>
+                        <div id="play-pause-back" class="buttons-back"><i class="fa-solid fa-play" id="ctrlIcon-back"></i></div>
+                        <div id="next-back" class="buttons-back"><i class="fa-solid fa-forward"></i></div>
+                    </div>
+                </div>
+            </div>
+            <img id="player-icon" src="player.png" alt="">
+            <div class="navigation-buttons-homepage">
+                <img class="home" src="triangle.png" alt="">
+                <div class="square home"></div>
+                <div class="lines">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
