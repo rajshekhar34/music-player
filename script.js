@@ -1,148 +1,6 @@
-// const song = document.getElementById('song')
-// const progress = document.getElementById('progress')
-// const ctrlIcon = document.getElementById('ctrlIcon')
-// const rotate_image = document.querySelector('img')
-// const startTime = document.querySelector(".start-time")
-// const totalTime = document.querySelector(".total-time")
-
-// song.onloadedmetadata = () =>{
-//     progress.max = song.duration;
-//     progress.value = song.currentTime;
-// }
-
-// function formatTime(time) {
-//     const minutes = Math.floor(time / 60);
-//     const seconds = Math.floor(time % 60);
-//     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-// }
-
-// totalTime.textContent = formatTime(song.duration)
-
-// const playPause =()=>{
-//     if (ctrlIcon.classList.contains("fa-pause")) {
-//     song.pause()
-//     ctrlIcon.classList.remove("fa-pause")
-//     ctrlIcon.classList.add("fa-play")
-//     rotate_image.classList.remove('rotate_image')
-// }else {
-//     song.play()
-//     ctrlIcon.classList.add("fa-pause")
-//     ctrlIcon.classList.remove("fa-play")
-//     rotate_image.classList.add('rotate_image')
-// }
-// }
-
-// song.addEventListener('timeupdate', () => {
-//     progress.value = song.currentTime;
-//     startTime.textContent = formatTime(song.currentTime);
-//     console.log (startTime.textContent)
-// });
-
-// progress.onchange =()=>{
-//     song.currentTime = progress.value;
-//     song.play()
-//     ctrlIcon.classList.add("fa-pause")
-//     ctrlIcon.classList.remove("fa-play")
-// }
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const music = document.getElementById('music');
-//     const artist = document.querySelector('.artist')
-//     const title = document.querySelector('.title')
-//     const image = document.querySelector('.song-img')
-//     const progress = document.getElementById('progress');
-//     const ctrlIcon = document.getElementById('ctrlIcon');
-//     const rotate_image = document.querySelector('img');
-//     const startTime = document.querySelector('.start-time');
-//     const totalTime = document.querySelector('.total-time');
-//     const play_pause = document.getElementById('play-pause')
-//     const prev = document.getElementById('prev')
-//     const next = document.getElementById('next')
-
-//     const songs = [
-//         {
-//             artist: 'Mohit Chauhan',
-//             song_name: 'Tune_Jo',
-//             song_title: 'Tune Jo Na Kaha',
-//         },
-//         {
-//             artist: 'Arijit Singh',
-//             song_name: 'Ve_Kamleya',
-//             song_title: 'Ve Kamleya',
-//         }
-//     ]
-
-//     music.onloadedmetadata = () => {
-//         progress.max = music.duration;
-//         progress.value = music.currentTime;
-//         totalTime.textContent = formatTime(music.duration);
-//     };
-
-//     function formatTime(time) {
-//         const minutes = Math.floor(time / 60);
-//         const seconds = Math.floor(time % 60);
-//         return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-//     }
-
-//     const playPause = () => {
-//         if (music.paused) {
-//             music.play();
-//             ctrlIcon.classList.add('fa-pause');
-//             ctrlIcon.classList.remove('fa-play');
-//             rotate_image.classList.add('rotate_image');
-//         } else {
-//             music.pause();
-//             ctrlIcon.classList.remove('fa-pause');
-//             ctrlIcon.classList.add('fa-play');
-//             rotate_image.classList.remove('rotate_image');
-//         }
-//     };
-
-//         if (music.play()) {
-//             setInterval(() => {
-//                 startTime.textContent = formatTime(music.currentTime);
-//             }, 100);
-//         };
-
-//         progress.onchange = ()=>{
-//             music.currentTime = progress.value
-//         }
-
-//     play_pause.addEventListener('click', playPause);
-
-//     const loadSong = (song)=>{
-//         title.textContent = song.song_title;
-//         artist.textContent = song.artist;
-//         music.src = `music/${song.song_name}.mp3`
-//         image.src = `image/${song.song_name}.jpg`
-//     };
-
-//     loadSong(songs[0])
-
-//     songIndex = 0;
-
-// const prevSong = ()=>{
-//     songIndex = (songIndex - 1 + songs.length) % songs.length;
-//     loadSong(songs[songIndex]);
-//     music.play();
-//     ctrlIcon.classList.add('fa-pause');
-//     ctrlIcon.classList.remove('fa-play');
-//     rotate_image.classList.add('rotate_image');
-// }
-// const nextSong = ()=>{
-//     songIndex = (songIndex + 1) % songs.length
-//     loadSong(songs[songIndex]);
-//     music.play();
-//     ctrlIcon.classList.add('fa-pause');
-//     ctrlIcon.classList.remove('fa-play');
-//     rotate_image.classList.add('rotate_image');
-// }
-
-//    prev.addEventListener("click", prevSong)
-//    next.addEventListener("click", nextSong)
-// });
-
-document.addEventListener("DOMContentLoaded", () => {
+  
+  
+  document.addEventListener("DOMContentLoaded", () => {
   const music = document.getElementById("music");
   const artist = document.querySelector(".artist");
   const title = document.querySelector(".title");
@@ -156,6 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const prev = document.getElementById("prev");
   const next = document.getElementById("next");
   const container = document.querySelector('.container')
+  const lyrics_button = document.querySelector('.lyrics')
+  const lyrics_container = document.querySelector('.lyrics-container')
+  const cross_lyrics = document.getElementById('cross-lyrics')
+  const show_lyrics = document.querySelector('.show-lyrics')
 
 
   const progress_back = document.getElementById("progress-back");
@@ -165,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const play_pause_back = document.getElementById('play-pause-back');
   const prev_back = document.getElementById("prev-back");
   const next_back = document.getElementById("next-back");
-  const song_detail_back = document.getElementById('song-details-back');
+  const song_name_back = document.getElementById('song-name-back');
+  const artist_name_back = document.getElementById('artist-name-back');
   const time = document.getElementById('time');
   const date = document.getElementById('date');
   const crossmark = document.querySelector('.crossmark')
@@ -193,6 +56,13 @@ player_icon.addEventListener("click", ()=>{
     homepage.classList.add('hide')
 })
 
+lyrics_button.addEventListener("click",()=>{
+  lyrics_container.classList.remove("hide")
+})
+
+cross_lyrics.addEventListener("click",()=>{
+  lyrics_container.classList.add("hide")
+})
 
 
 
@@ -202,11 +72,178 @@ player_icon.addEventListener("click", ()=>{
       artist: "Mohit Chauhan",
       song_name: "Tune_Jo",
       song_title: "Tune Jo Na Kaha",
+      song_lyrics: `Mmmm mmm mmmmmm... mmm mmmm
+
+
+      Tune jo na kaha
+      
+      
+      Main woh sunta raha
+      
+      Khamakha bewajah khwaab bunta raha
+      
+      
+      Tune jo na kaha
+      
+      Main woh sunta raha
+      
+      Khamakha bewajah khwaab bunta raha
+      
+      Jaane kiski humein lag gayi hai nazar
+      
+      Is shehar mein na apna thikana raha
+      
+      Durr chahat se mein apni chalta raha
+      
+      Khamakha bewajah khwaab bunta raha
+      
+      
+      Dard pehle se hai zyaada
+      
+      Khud se phir yeh kiya wada
+      
+      Khamosh nazrein rahe bezubaan
+      
+      
+      Aab na pehle si baatein hain
+      
+      Bolo to lab thar tharatein hain
+      
+      Raaz yeh dil ka
+      
+      Na ho bayaan
+      
+      Ho gaya ke aasar koi hum pe nayi
+      
+      Humsafar mein toh hai
+      
+      Humsafar hai nahi
+      
+      Durr jaata raha
+      
+      Paas aatha raha
+      
+      Khamakha bewajah khwaab bunta raha
+      
+      
+      Aaya woh phir nazar aise
+      
+      Baat chidne lagi phir se
+      
+      Aankho mein chubtha kal ka dhuwaan
+      
+      
+      Haal tera na hum sa hain
+      
+      Is khushi mein kyun gham sa hai
+      
+      Basne laga kyun phir woh jahan
+      
+      Woh jahan durr jisse gaye the nikal
+      
+      Phir se yaadon ne kar di hai jaise pehel
+      
+      Lamha beet ta huwa
+      
+      Dil dhukata raha
+      
+      Khamakha bewajah khwaab bunta raha
+      
+      Tune jo na kaha
+      
+      Main woh sunta raha
+      
+      Khamakha bewajah khwaab bunta raha
+      
+      Jaane kiski humein lag gayi hai nazar
+      
+      Is shehar mein na apna thikana raha
+      
+      Durr chahat se main apni chalta raha
+      
+      Bhuj gayi aag thi
+      
+      Daag jalta raha`
     },
     {
       artist: "Arijit Singh",
       song_name: "Ve_Kamleya",
       song_title: "Ve Kamleya",
+      song_lyrics: `Ve Kamleya Ve Kamleya
+      Ve Kamleya Mere Nadaan Dil
+      
+      Ve Kamleya Ve Kamleya
+      Ve Kamleya Mere Nadaan Dil
+      
+      Do Nainon Ke Pechida Sau Galiyare
+      Inmein Kho Kar Tu Milta Hai Kahan
+      Tujhko Ambar Se Pinjre Zyada Pyare
+      
+      Udd Ja Kehne Se
+      Sunta Bhi Tu Hai Kahan
+      Gall Sunn Le Aa
+      
+      Gall Sunn Le Aa
+      Ve Kamleya Mere Nadaan Dil
+      
+      Ve Kamleya Ve Kamleya
+      Ve Kamleya Mere Nadaan Dil
+      Nadaan Dil
+      
+      Ja Karna Hai Toh Pyar Kar
+      Zid Poori Phir Ik Baar Kar
+      Kamleya Ve Kamleya
+      
+      Manmarzi Karke Dekh Le
+      Badle Mein Sab Kuchh Haar Kar
+      Kamleya Ve Kamleya
+      
+      Tujhpe Khud Se Zyada
+      Yaar Ki Chalti Hai
+      Ishq Hai Yeh Tera
+      Ya Teri Ghalti Hai
+      
+      Agar Sawaab Hai Toh
+      Kyun Saza Milti Hai
+      
+      Dillagi Ik Teri
+      Aaj Kal Parson Ki
+      Neend Le Jaati Hai
+      Loot Ke Barson Ki
+      
+      Maan Le Kabhi Toh
+      Baat Khudgarzon Ki
+      
+      Jinpe Chal Ke
+      Manzil Milni Aasaan Ho
+      Vaise Raste
+      Tu Chunta Hai Kahan Ho Ho
+      
+      Kasti Hai Duniya
+      Kass Le Fikre Taane
+      Ungli Pe Aakhir Ginta Bhi
+      Tu Hai Kahan
+      
+      Marzi Teri Jee Bhar Le Aa
+      Ve Kamleya Mere Nadaan Dil
+      Ve Kamleya Ve Kamleya
+      Ve Kamleya Mere Nadaan Dil
+      
+      Ja Karna Hai Toh Pyaar Kar
+      Zid Poori Phir Ik Baar Kar
+      Kamleya Ve Kamleya
+      
+      Manmarzi Karke Dekh Le
+      Badle Mein Sab Kuchh Haar Kar
+      Kamleya Ve Kamleya
+      
+      Ja Karna Hai Toh Pyaar Kar
+      Zid Poori Phir Ik Baar Kar
+      Kamleya Ve Kamleya
+      
+      Manmarzi Karke Dekh Le
+      Badle Mein Sab Kuchh Haar Kar
+      Kamleya Ve Kamleya`
     },
   ];
 
@@ -275,7 +312,9 @@ player_icon.addEventListener("click", ()=>{
   const loadSong = (song) => {
     title.textContent = song.song_title;
     artist.textContent = song.artist;
-    song_detail_back.textContent = song.song_title +" by "+ song.artist;
+    show_lyrics.textContent = song.song_lyrics;
+    song_name_back.textContent = song.song_title;
+    artist_name_back.textContent = song.artist;
     music.src = `music/${song.song_name}.mp3`;
     image.src = `image/${song.song_name}.jpg`;
   };
@@ -318,9 +357,10 @@ player_icon.addEventListener("click", ()=>{
 
   prev_back.addEventListener("click", prevSong);
   next_back.addEventListener("click", nextSong);
+
+  music.addEventListener('ended', () => {
+    nextSong();
 });
-
-
 const currentTime = new Date();
 let hours = currentTime.getHours();
 let minutes = currentTime.getMinutes();
@@ -339,3 +379,7 @@ if (hours > 12) {
 
 const formattedTime = hours+":"+minutes;
 time.textContent = formattedTime
+
+});
+
+

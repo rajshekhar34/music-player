@@ -19,8 +19,9 @@
                <img class="song-img" src="" alt="">
             </div>
             <div class="song-details">
-                <p class="title">Ve kamleya</p>
-                <p class="artist">Arijit Singh</p>
+                <p class="title"></p>
+                <p class="artist"></p>
+                <button class="lyrics">Lyrics</button>
                     <audio id="music"></audio>
             </div>
             <div class="button-container">
@@ -45,7 +46,14 @@
                         <div></div>
                     </div>
             </div>
+
+            <div class="lyrics-container hide">
+                <div class="cross-lyrics"><i id="cross-lyrics" class="fa-solid fa-xmark"></i></div>
+                <p class="show-lyrics"></p>
+            </div>
         </div>
+
+        
 
 
         <div class="homepage hide">
@@ -61,7 +69,10 @@
                 <div class="button-container-back">
                     <div id="duration-back">
                         <p class="start-time-back"></p>
-                        <marquee id="song-details-back" behavior="" direction="" scrolldelay="200"></marquee>
+                        <div class="song-details-back">
+                            <p id="song-name-back"></p>
+                            <p id="artist-name-back"></p>
+                        </div>
                         <p class="total-time-back"></p>
                     </div>
                     <input type="range" name="" class="custom-range" id="progress-back">
