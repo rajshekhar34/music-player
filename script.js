@@ -18,6 +18,7 @@
   const lyrics_container = document.querySelector('.lyrics-container')
   const cross_lyrics = document.getElementById('cross-lyrics')
   const show_lyrics = document.querySelector('.show-lyrics')
+  const animate = document.querySelector('.animate')
 
 
   const progress_back = document.getElementById("progress-back");
@@ -47,21 +48,25 @@ home_icon.forEach(home => {
     home.addEventListener("click",()=>{
         container.classList.add('hide')
         homepage.classList.remove('hide')
+        container.classList.remove('animate');
     })
 });
 
 
 player_icon.addEventListener("click", ()=>{
+  container.classList.add('animate');
     container.classList.remove('hide');
     homepage.classList.add('hide')
 })
 
 lyrics_button.addEventListener("click",()=>{
   lyrics_container.classList.remove("hide")
+  lyrics_container.classList.add('animate');
 })
 
 cross_lyrics.addEventListener("click",()=>{
   lyrics_container.classList.add("hide")
+  lyrics_container.classList.remove('animate');
 })
 
 
