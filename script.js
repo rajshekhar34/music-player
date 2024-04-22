@@ -321,7 +321,7 @@ cross_lyrics.addEventListener("click",()=>{
     song_name_back.textContent = song.song_title;
     artist_name_back.textContent = song.artist;
     music.src = `music/${song.song_name}.mp3`;
-    image.src = `image/${song.song_name}.jpg`;
+    image.src = `music/${song.song_name}.jpg`;
   };
 
 
